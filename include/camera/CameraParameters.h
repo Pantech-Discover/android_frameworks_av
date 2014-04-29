@@ -649,6 +649,61 @@ public:
     // Value for KEY_FOCUS_DISTANCES.
     static const char FOCUS_DISTANCE_INFINITY[];
 
+#ifdef PANTECH_CAMERA_HARDWARE
+	static const char KEY_SKY_COLOREXT_COORDINATES_R[];
+	static const char KEY_SKY_COLOREXT_COORDINATES_G[];
+	static const char KEY_SKY_COLOREXT_COORDINATES_B[];
+	static const char KEY_SKY_COLOREXTRACTION[];
+	static const char KEY_SKY_IPL_MODE[];
+	static const char SKY_IPL_OFF[];
+	static const char SKY_COLOREXT_OFF[];
+	static const char KEY_SUPPORTED_SKY_COLOREXTRACTION[];
+	static const char KEY_SKY_COLOREXT_COORDINATES[];
+	static const char KEY_SKY_COLOREXT_RGB_R[];
+	static const char KEY_SKY_COLOREXT_RGB_G[];
+	static const char KEY_SKY_COLOREXT_RGB_B[];
+	static const char SKY_COLOREXT_TOUCH[];
+	static const char SKY_COLOREXT_RED[];
+	static const char SKY_COLOREXT_GREEN[];
+	static const char SKY_COLOREXT_BLUE[];
+	static const char SKY_COLOREXT_YELLOW[];
+	static const char SKY_IPL_CAMNOTE[];
+	static const char SKY_IPL_BEAUTY[];
+	static const char SKY_IPL_MINIATURE[];
+	static const char SKY_IPL_CARTOON[];
+	static const char SKY_IPL_CARTOON_FRONT[];
+	static const char KEY_SHUTTER_SOUND[];
+	static const char KEY_CAMNOTE[];
+	static const char KEY_CAMNOTE_MODE[];
+	static const char KEY_VT[];
+	static const char REFLECT_OFF[];
+	static const char CAMNOTE_WB_C[];
+	static const char CAMNOTE_OFF[];
+	static const char CAMNOTE_ON[];
+	static const char CAMNOTE_WB_B[];
+	static const char CAMNOTE_BL_B[];
+	static const char CAMNOTE_NORMAL[];
+	static const char EFFECT_WHITEBOARD_C[];
+	static const char EFFECT_BLACKBOARD_C[];
+	static const char KEY_MULTISHOT[];
+	static const char MULTISHOT_OFF[];
+	static const char MULTISHOT_ON[];
+	static const char KEY_SKY_IPL_VALUE_2[];
+	static const char KEY_SKY_IPL_VALUE_1[];
+	static const char KEY_REFLECT[];
+	static const char KEY_SUPPORTED_SHUTTER_SOUND[];
+	static const char KEY_SUPPORTED_REFLECT[];
+	static const char SCENE_MODE_INDOOR[];
+	static const char SCENE_MODE_TEXT[];
+	static const char SHUTTER_SOUND_OFF[];
+	static const char SHUTTER_SOUND_ON[];
+	static const char AUTO_EXPOSURE_OFF[];
+	static const char WHITE_BALANCE_OFF[];
+	static const char REFLECT_MIRROR[];
+	static const char REFLECT_WATER[];
+	static const char REFLECT_MIRROR_WATER[];
+#endif
+
 #ifdef QCOM_HARDWARE
     // DENOISE
     static const char KEY_DENOISE[];
@@ -977,6 +1032,18 @@ public:
 #ifdef QCOM_SONY_HARDWARE
     void getFocusAreaCenter(int *x, int *y) const;
 #endif
+#endif
+#ifdef PANTECH_CAMERA_HARDWARE
+    void getColorExtractionCoordinates(int *x, int *y) const;
+    void setColorExtractionCoordinates(int x, int y);
+    void getColorExtractionRGB_B(int *x, int *y) const;
+    void setColorExtractionRGB_B(int x, int y);
+    void getColorExtractionRGB_G(int *x, int *y) const;
+    void setColorExtractionRGB_G(int x, int y);
+    void getColorExtractionRGB_R(int *x, int *y) const;
+    void setColorExtractionRGB_R(int x, int y);
+    void getFocusCoordinates(int *x, int *y) const;
+    void setFocusCoordinates(int x, int y);
 #endif
 #ifdef STE_HARDWARE
     // keys for record stride and slice height

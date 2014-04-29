@@ -179,6 +179,61 @@ const char CameraParameters::KEY_POWER_MODE_SUPPORTED[] = "power-mode-supported"
 /*only effective when KEY_AE_BRACKET_HDR set to ae_bracketing*/
 //const char CameraParameters::KEY_AE_BRACKET_SETTING_KEY[] = "ae-bracket-setting";
 
+#ifdef PANTECH_CAMERA_HARDWARE
+const char CameraParameters::KEY_SKY_COLOREXT_COORDINATES_R[] = "pantech-color-extraction-coordinates-r";
+const char CameraParameters::KEY_SKY_COLOREXT_COORDINATES_G[] = "pantech-color-extraction-coordinates-g";
+const char CameraParameters::KEY_SKY_COLOREXT_COORDINATES_B[] = "pantech-color-extraction-coordinates-b";
+const char CameraParameters::KEY_SKY_COLOREXTRACTION[] = "pantech-colorextraction";
+const char CameraParameters::KEY_SKY_IPL_MODE[] = "pantech-ipl-mode";
+const char CameraParameters::SKY_IPL_OFF[] = "off";
+const char CameraParameters::SKY_COLOREXT_OFF[] = "off";
+const char CameraParameters::KEY_SUPPORTED_SKY_COLOREXTRACTION[] = "T";
+const char CameraParameters::KEY_SKY_COLOREXT_COORDINATES[] = "T";
+const char CameraParameters::KEY_SKY_COLOREXT_RGB_R[] = "pantech-colorextraction-rgb-r";
+const char CameraParameters::KEY_SKY_COLOREXT_RGB_G[] = "pantech-colorextraction-rgb-g";
+const char CameraParameters::KEY_SKY_COLOREXT_RGB_B[] = "pantech-colorextraction-rgb-b";
+const char CameraParameters::SKY_COLOREXT_TOUCH[] = "colorext-touch";
+const char CameraParameters::SKY_COLOREXT_RED[] = "colorext-red";
+const char CameraParameters::SKY_COLOREXT_GREEN[] = "colorext-green";
+const char CameraParameters::SKY_COLOREXT_BLUE[] = "colorext-blue";
+const char CameraParameters::SKY_COLOREXT_YELLOW[] = "colorext-yellow";
+const char CameraParameters::SKY_IPL_CAMNOTE[] = "pantech-ipl-camnote";
+const char CameraParameters::SKY_IPL_BEAUTY[] = "pantech-ipl-beauty";
+const char CameraParameters::SKY_IPL_MINIATURE[] = "pantech-ipl-miniature";
+const char CameraParameters::SKY_IPL_CARTOON[] = "pantech-ipl-cartoon";
+const char CameraParameters::SKY_IPL_CARTOON_FRONT[] = "cartoon-front";
+const char CameraParameters::KEY_SHUTTER_SOUND[] = "shutter-sound";
+const char CameraParameters::KEY_CAMNOTE[] = "camnote";
+const char CameraParameters::KEY_CAMNOTE_MODE[] = "camnote-mode";
+const char CameraParameters::KEY_VT[] = "pantech-vt";
+const char CameraParameters::KEY_MULTISHOT[] = "pantech-multishot";
+const char CameraParameters::MULTISHOT_OFF[] = "off";
+const char CameraParameters::MULTISHOT_ON[] = "on";
+const char CameraParameters::REFLECT_OFF[] = "off";
+const char CameraParameters::CAMNOTE_WB_C[] = "wb-c";
+const char CameraParameters::CAMNOTE_OFF[] = "off";
+const char CameraParameters::CAMNOTE_ON[] = "on";
+const char CameraParameters::CAMNOTE_WB_B[] = "wb-b";
+const char CameraParameters::CAMNOTE_BL_B[] = "bl-b";
+const char CameraParameters::CAMNOTE_NORMAL[] = "normal";
+const char CameraParameters::EFFECT_WHITEBOARD_C[] = "whiteboard-c";
+const char CameraParameters::EFFECT_BLACKBOARD_C[] = "blackboard-c";
+const char CameraParameters::KEY_SKY_IPL_VALUE_2[] = "value-2";
+const char CameraParameters::KEY_SKY_IPL_VALUE_1[] = "value-1";
+const char CameraParameters::KEY_REFLECT[] = "pantech-reflect";
+const char CameraParameters::KEY_SUPPORTED_SHUTTER_SOUND[] = "pantech-supported-shutter-sound";
+const char CameraParameters::KEY_SUPPORTED_REFLECT[] = "pantech-supported-reflect";
+const char CameraParameters::SCENE_MODE_INDOOR[] = "indoor";
+const char CameraParameters::SCENE_MODE_TEXT[] = "text";
+const char CameraParameters::SHUTTER_SOUND_OFF[] = "off";
+const char CameraParameters::SHUTTER_SOUND_ON[] = "on";
+const char CameraParameters::AUTO_EXPOSURE_OFF[] = "off";
+const char CameraParameters::WHITE_BALANCE_OFF[] = "off";
+const char CameraParameters::REFLECT_MIRROR[] = "mirror";
+const char CameraParameters::REFLECT_WATER[] = "water";
+const char CameraParameters::REFLECT_MIRROR_WATER[] = "mirror-water";
+#endif
+
 const char CameraParameters::TRUE[] = "true";
 const char CameraParameters::FALSE[] = "false";
 const char CameraParameters::FOCUS_DISTANCE_INFINITY[] = "Infinity";
@@ -692,6 +747,49 @@ void CameraParameters::setPreviewFpsRange(int minFPS, int maxFPS)
     char str[32];
     snprintf(str, sizeof(str), "%d,%d",minFPS,maxFPS);
     set(KEY_PREVIEW_FPS_RANGE,str);
+}
+#endif
+
+#ifdef PANTECH_CAMERA_HARDWARE
+void CameraParameters::getColorExtractionCoordinates(int *x, int *y) const 
+{
+    // dummy
+}
+void CameraParameters::setColorExtractionCoordinates(int x, int y) 
+{
+    // dummy
+}
+void CameraParameters::getColorExtractionRGB_B(int *x, int *y) const 
+{
+    // dummy
+}
+void CameraParameters::setColorExtractionRGB_B(int x, int y) 
+{
+    // dummy
+}
+void CameraParameters::getColorExtractionRGB_G(int *x, int *y) const 
+{
+    // dummy
+}
+void CameraParameters::setColorExtractionRGB_G(int x, int y) 
+{
+    // dummy
+}
+void CameraParameters::getColorExtractionRGB_R(int *x, int *y) const 
+{
+    // dummy
+}
+void CameraParameters::setColorExtractionRGB_R(int x, int y) 
+{
+    // dummy
+}
+void CameraParameters::getFocusCoordinates(int *x, int *y) const 
+{
+    // dummy
+}
+void CameraParameters::setFocusCoordinates(int x, int y) 
+{
+    // dummy
 }
 #endif
 
